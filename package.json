@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-pix",
+  "version": "0.0.1",
+  "description": "Cordova Plugin for Pix Image Picker",
+  "cordova": {
+    "id": "cordova-plugin-pix",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwlin/cordova-plugin-pix.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": {
+    "cordova": ">=7.0.0"
+  },
+  "author": {
+    "name": "pwlin05@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pwlin/cordova-plugin-pix/issues"
+  },
+  "homepage": "https://github.com/pwlin/cordova-plugin-pix#readme"
+}

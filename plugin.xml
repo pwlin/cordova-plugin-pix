@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+The MIT License (MIT)
+
+Copyright (c) 2019 pwlin - pwlin05@gmail.com 
+https://gtihub.com/pwlin/cordova-plugin-pix
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-pix" version="0.0.1">
+
+    <name>cordova-plugin-pix</name>
+    <description>Cordova Plugin for Pix Image Picker</description>
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/plugins.Pix.js" name="Pix">
+        <clobbers target="cordova.plugins.Pix" />
+    </js-module>
+
+    <!-- Android -->
+    <platform name="android">
+        <source-file src="src/android/pix" target-dir="src/io/github/pwlin/cordova/plugins" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Pix">
+                <param name="android-package" value="io.github.pwlin.cordova.plugins.pix.Pix" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+        </config-file>
+        <dependency id="cordova-plugin-android-permissions" />
+        <framework src="libs/pix" custom="true" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+          <activity android:name="io.github.pwlin.cordova.plugins.pix.DialogShowPicker" android:label="Pix filepicker">
+            <intent-filter>
+              <action android:name="io.github.pwlin.cordova.plugins.pix.DialogShowPicker" />
+              <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+          </activity>
+        </config-file>
+    </platform>
+</plugin>
