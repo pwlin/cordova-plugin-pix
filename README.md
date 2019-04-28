@@ -40,11 +40,13 @@ Open Pick Imager Picker and set a callback for success or fail events.
 
 ```js
 cordova.plugins.Pix.open(
-    success: function(response) {
-        console.log(response);
-    },
-    error: function(e) {
-        console.error(e);
+    { 
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(e) {
+            console.error(e);
+        }
     }
 );
 ```
