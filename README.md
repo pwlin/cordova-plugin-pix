@@ -2,6 +2,12 @@
 
 This plugin is a port of [Pix (WhatsApp Style Image Picker)](https://github.com/akshay2211/PixImagePicker) for using with Cordova.
 
+## Demo
+
+[**Clone the sample repository**](https://github.com/pwlin/cordova-plugin-pix-sample)
+
+
+
 ![cdv-pix-screenshot](https://i.imgur.com/viYvm8S.gif)
 
 ```js
