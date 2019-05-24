@@ -47,10 +47,12 @@ import org.apache.cordova.PluginResult;
 public class Pix extends CordovaPlugin {
 
     private CallbackContext cntx;
+    private Integer pictureQuality;
     private static ProgressDialog pDialogObj = null;
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         this.cntx = callbackContext;
+        this.pictureQuality = args.getInt(0);
         if (this.cordova.getActivity().isFinishing()) {
             return true;
         } else {
@@ -158,7 +160,7 @@ public class Pix extends CordovaPlugin {
         }
         Bitmap bm = BitmapFactory.decodeStream(fis);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.JPEG, 80, baos);
+        bm.compress(Bitmap.CompressFormat.JPEG, this.pictureQuality, baos);
         byte[] img = baos.toByteArray();
         String s = Base64.encodeToString(img, Base64.NO_WRAP);
         return s;

@@ -32,7 +32,7 @@ class Pix {
 				cordova.plugins.permissions.WRITE_EXTERNAL_STORAGE,
 				cordova.plugins.permissions.READ_MEDIA_IMAGES
 			], function (status) {
-			exec(callbackContext.success || null, callbackContext.error || null, 'Pix', 'open', ['']);
+			exec(callbackContext.success || null, callbackContext.error || null, 'Pix', 'open', [callbackContext.quality || 50]);
 		}, function () {
 			console.error(arguments);
 		});

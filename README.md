@@ -8,7 +8,8 @@ This plugin is a port of [Pix (WhatsApp Style Image Picker)](https://github.com/
 cordova.plugins.Pix.open(
     {
         success: function(response){},
-        error: function(e){}        
+        error: function(e){},
+        quality: 50       
     }
 );
 ```
@@ -46,7 +47,8 @@ cordova.plugins.Pix.open(
         },
         error: function(e) {
             console.error(e);
-        }
+        },
+        quality: 50
     }
 );
 ```
