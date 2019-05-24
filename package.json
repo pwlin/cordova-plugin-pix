@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-pix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cordova Plugin for Pix Image Picker",
   "cordova": {
     "id": "cordova-plugin-pix",
