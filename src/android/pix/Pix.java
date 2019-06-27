@@ -127,7 +127,7 @@ public class Pix extends CordovaPlugin {
                     dataObj.put("file", s);
                     dataObj.put("base64", this._toBase64(s));
                     dataObj.put("type", "image/jpeg");
-                    dataObj.put("prefix", "data:image/jpeg;charset=utf-8;base64,");
+                    dataObj.put("prefix", "data:image/jpeg;base64,");
                     arObj.put(dataObj);
                 }
                 retObj.putOpt("data", arObj);
